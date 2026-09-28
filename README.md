@@ -1,6 +1,6 @@
 # Karthik Bhandarkar — Personal Portfolio & Engineering Studio
 
-[![CI Pipeline](https://github.com/Karthik-bhandarkar/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/Karthik-bhandarkar/portfolio/actions/workflows/ci.yml)
+[![CI Pipeline](https://github.com/Karthik-bhandarkar/karthik-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/Karthik-bhandarkar/karthik-portfolio/actions/workflows/ci.yml)
 [![Next.js](https://img.shields.io/badge/Next.js-16.2.6-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2.6-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -114,7 +114,7 @@ graph TD
 ### 1. Clone & Install Dependencies
 
 ```bash
-git clone https://github.com/Karthik-bhandarkar/portfolio.git
+git clone https://github.com/Karthik-bhandarkar/karthik-portfolio.git
 cd portfolio
 npm install
 ```

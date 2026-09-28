@@ -40,7 +40,7 @@ npm run db:seed
 
 1. Push your Git repository to GitHub:
    ```bash
-   git remote add origin https://github.com/Karthik-bhandarkar/portfolio.git
+   git remote add origin https://github.com/Karthik-bhandarkar/karthik-portfolio.git
    git branch -M main
    git push -u origin main
    ```
@@ -74,7 +74,7 @@ sudo systemctl enable --now docker
 ### Step 2: Clone and Configure
 
 ```bash
-git clone https://github.com/Karthik-bhandarkar/portfolio.git /var/www/portfolio
+git clone https://github.com/Karthik-bhandarkar/karthik-portfolio.git /var/www/portfolio
 cd /var/www/portfolio
 
 # Create production environment file
