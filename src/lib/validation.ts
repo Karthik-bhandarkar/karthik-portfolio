@@ -34,6 +34,8 @@ export const contactInputSchema = z.object({
   website: z.string().max(200).optional().default(""),
 });
 
+export type ContactInput = z.infer<typeof contactInputSchema>;
+
 export const projectInputSchema = z.object({
   id: z.string().trim().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).max(80),
   iconName: z.enum(PROJECT_ICONS),
@@ -84,6 +86,8 @@ export const projectInputSchema = z.object({
   sortOrder: z.number().int().min(0).max(10000),
   isPublished: z.boolean(),
 });
+
+export type ProjectInput = z.infer<typeof projectInputSchema>;
 
 export async function parseSmallJson(request: Request): Promise<unknown> {
   const length = Number(request.headers.get("content-length"));

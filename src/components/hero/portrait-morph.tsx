@@ -310,6 +310,8 @@ export function PortraitMorph({
       style={{ position: "relative", width: "100%", height: "100%", filter: "grayscale(100%)" }}
     >
       {!ready ? (
+        // Fallback placeholder prior to WebGL shader texture initialization
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           src={srcA}
           alt={alt}
