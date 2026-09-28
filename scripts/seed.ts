@@ -1,4 +1,7 @@
-import "dotenv/config";
+import { config } from "dotenv";
+config({ path: ".env.local" });
+config({ path: ".env" });
+
 import { drizzle } from "drizzle-orm/node-postgres";
 import { Pool } from "pg";
 import { initialProjects } from "../src/lib/portfolio-data";
@@ -18,7 +21,7 @@ async function main() {
   const pool = new Pool({
     connectionString: databaseUrl,
     connectionTimeoutMillis: 10000,
-    ssl: databaseUrl.includes("sslmode=require") ? { rejectUnauthorized: false } : undefined,
+    ssl: { rejectUnauthorized: false },
   });
 
   const db = drizzle(pool);

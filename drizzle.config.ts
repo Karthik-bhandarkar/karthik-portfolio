@@ -1,4 +1,7 @@
-import "dotenv/config";
+import { config } from "dotenv";
+config({ path: ".env.local" });
+config({ path: ".env" });
+
 import { defineConfig } from "drizzle-kit";
 
 export default defineConfig({
@@ -9,5 +12,5 @@ export default defineConfig({
     url: process.env.DATABASE_URL || "postgresql://postgres:postgres@localhost:5432/portfolio_db",
   },
   verbose: true,
-  strict: true,
+  strict: false,
 });
