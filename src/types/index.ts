@@ -5,4 +5,5 @@ export type {
   portfolioProjects,
   portfolioProfile,
   contactMessages,
+  portfolioResume,
 } from "@/db/schema";

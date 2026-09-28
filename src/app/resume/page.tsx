@@ -1,4 +1,4 @@
-import { ArrowUpRight, Download, Mail } from "lucide-react";
+import { ArrowUpRight, Download, FileCode, Mail } from "lucide-react";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
@@ -34,6 +34,14 @@ export default function ResumePage(): ReactNode {
             >
               <Download className="h-4 w-4" aria-hidden="true" />
               Download PDF
+            </a>
+            <a
+              href="/resume.tex"
+              download="Karthik-Bhandarkar-Resume.tex"
+              className="focus-ring inline-flex h-11 items-center gap-2 rounded-xl border border-foreground/10 bg-background px-5 text-sm font-medium text-foreground transition-colors hover:bg-foreground/5"
+            >
+              <FileCode className="h-4 w-4" aria-hidden="true" />
+              LaTeX (.tex)
             </a>
             <a
               href={`mailto:${resume.email}`}
@@ -85,6 +93,17 @@ export default function ResumePage(): ReactNode {
                 <p className="text-[15px] leading-[1.7] tracking-tight text-foreground/80">{resume.summary}</p>
               </ResumeSection>
 
+              <ResumeSection title="Technical Skills">
+                <dl className="space-y-2.5">
+                  {resume.skills.map((group) => (
+                    <div key={group.label} className="grid gap-1 sm:grid-cols-[10rem_1fr] sm:gap-4">
+                      <dt className="text-[13.5px] font-semibold tracking-tight text-foreground">{group.label}</dt>
+                      <dd className="text-[14px] leading-relaxed tracking-tight text-foreground/75">{group.items}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </ResumeSection>
+
               <ResumeSection title="Experience">
                 <div className="space-y-7">
                   {resume.experience.map((entry) => (
@@ -99,17 +118,6 @@ export default function ResumePage(): ReactNode {
                     <Entry key={entry.title} entry={entry} />
                   ))}
                 </div>
-              </ResumeSection>
-
-              <ResumeSection title="Skills">
-                <dl className="space-y-2.5">
-                  {resume.skills.map((group) => (
-                    <div key={group.label} className="grid gap-1 sm:grid-cols-[6.5rem_1fr] sm:gap-4">
-                      <dt className="text-[13.5px] font-semibold tracking-tight text-foreground">{group.label}</dt>
-                      <dd className="text-[14px] leading-relaxed tracking-tight text-foreground/75">{group.items}</dd>
-                    </div>
-                  ))}
-                </dl>
               </ResumeSection>
 
               <ResumeSection title="Education">
@@ -128,7 +136,7 @@ export default function ResumePage(): ReactNode {
                 </div>
               </ResumeSection>
 
-              <ResumeSection title="Certifications & publication">
+              <ResumeSection title="Certifications">
                 <BulletList items={resume.credentials} />
               </ResumeSection>
             </div>

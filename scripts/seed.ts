@@ -6,7 +6,12 @@ import { drizzle } from "drizzle-orm/node-postgres";
 import { Pool } from "pg";
 import { initialProjects } from "../src/lib/portfolio-data";
 import { defaultProfile } from "../src/lib/profile-store";
-import { portfolioProjects, portfolioProfile } from "../src/db/schema";
+import { resume, latexResumeSource } from "../src/lib/resume-data";
+import {
+  portfolioProjects,
+  portfolioProfile,
+  portfolioResume,
+} from "../src/db/schema";
 
 async function main() {
   const databaseUrl = process.env.DATABASE_URL;
@@ -40,6 +45,34 @@ async function main() {
       .values(initialProjects)
       .onConflictDoNothing();
     console.log("✅ [Seed] Projects seeded successfully.");
+
+    console.log("📄 [Seed] Seeding resume and LaTeX source...");
+    await db
+      .insert(portfolioResume)
+      .values({
+        id: "main",
+        name: resume.name,
+        email: resume.email,
+        phone: resume.phone,
+        location: resume.location,
+        summary: resume.summary,
+        latexSource: latexResumeSource,
+        resumeData: resume,
+      })
+      .onConflictDoUpdate({
+        target: portfolioResume.id,
+        set: {
+          name: resume.name,
+          email: resume.email,
+          phone: resume.phone,
+          location: resume.location,
+          summary: resume.summary,
+          latexSource: latexResumeSource,
+          resumeData: resume,
+          updatedAt: new Date(),
+        },
+      });
+    console.log("✅ [Seed] Resume and LaTeX source saved to database successfully.");
 
     console.log("🎉 [Seed] Database seeding completed successfully!");
   } catch (error) {

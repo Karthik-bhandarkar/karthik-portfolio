@@ -2,6 +2,7 @@ import { sql } from "drizzle-orm";
 import {
   boolean,
   integer,
+  jsonb,
   pgTable,
   real,
   text,
@@ -76,3 +77,16 @@ export const contactMessages = pgTable("contact_messages", {
   message: text("message").notNull(),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
+
+export const portfolioResume = pgTable("portfolio_resume", {
+  id: varchar("id", { length: 20 }).primaryKey(),
+  name: varchar("name", { length: 120 }).notNull(),
+  email: varchar("email", { length: 254 }).notNull(),
+  phone: varchar("phone", { length: 40 }).notNull(),
+  location: varchar("location", { length: 160 }).notNull(),
+  summary: text("summary").notNull(),
+  latexSource: text("latex_source").notNull(),
+  resumeData: jsonb("resume_data").notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+});
+

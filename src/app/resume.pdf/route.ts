@@ -252,6 +252,9 @@ async function buildResumePdf(): Promise<Uint8Array> {
   writer.section("Summary");
   writer.paragraph(resume.summary);
 
+  writer.section("Technical Skills");
+  for (const group of resume.skills) writer.labeled(group.label, group.items);
+
   writer.section("Experience");
   for (const job of resume.experience) {
     writer.entry(`${job.title} — ${job.org}`, job.period, job.subtitle, job.link);
@@ -264,15 +267,12 @@ async function buildResumePdf(): Promise<Uint8Array> {
     writer.bullets(project.bullets);
   }
 
-  writer.section("Technical skills");
-  for (const group of resume.skills) writer.labeled(group.label, group.items);
-
   writer.section("Education");
   for (const school of resume.education) {
     writer.entry(school.degree, school.period, `${school.school} · ${school.result}`);
   }
 
-  writer.section("Certifications & publication");
+  writer.section("Certifications");
   writer.bullets(resume.credentials);
 
   return doc.save();
