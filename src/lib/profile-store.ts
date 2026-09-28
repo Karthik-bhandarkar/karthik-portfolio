@@ -29,7 +29,7 @@ export const defaultProfile: PortfolioProfile = {
   email: "karthikbhandarkar2004@gmail.com",
   portraitDefault: "",
   portraitHover: "",
-  linkedInUrl: "https://linkedin.com/in/karthikbhandarkar",
+  linkedInUrl: "https://www.linkedin.com/in/karthik-bhandarkar/",
   githubUrl: "https://github.com/Karthik-bhandarkar",
   leetcodeUrl: "https://leetcode.com/u/karthik_bhandarkar/",
   xUrl: "",

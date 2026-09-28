@@ -110,8 +110,8 @@ export const latexResumeSource = String.raw`\documentclass[letterpaper,10pt]{art
   {\small
     \href{https://karthik-bhandarkar.vercel.app/}
       {karthik-bhandarkar.vercel.app}\,$|$\,
-    \href{https://linkedin.com/in/karthikbhandarkar}
-      {linkedin.com/in/karthikbhandarkar}\,$|$\,
+    \href{https://www.linkedin.com/in/karthik-bhandarkar/}
+      {linkedin.com/in/karthik-bhandarkar}\,$|$\,
     \href{https://github.com/Karthik-bhandarkar}
       {github.com/Karthik-bhandarkar}
   }
@@ -222,7 +222,7 @@ export const resume: ResumeData = {
   email: "karthikbhandarkar2004@gmail.com",
   links: [
     { label: "karthik-bhandarkar.vercel.app", href: "https://karthik-bhandarkar.vercel.app/" },
-    { label: "linkedin.com/in/karthikbhandarkar", href: "https://linkedin.com/in/karthikbhandarkar" },
+    { label: "linkedin.com/in/karthik-bhandarkar", href: "https://www.linkedin.com/in/karthik-bhandarkar/" },
     { label: "github.com/Karthik-bhandarkar", href: "https://github.com/Karthik-bhandarkar" },
   ],
   summary:

@@ -251,7 +251,7 @@ If the database is unreachable, the endpoint responds with HTTP 500, enabling co
 
 **Karthik Bhandarkar**  
 Software Engineer — Bengaluru, Karnataka, India  
-- **LinkedIn**: [linkedin.com/in/karthikbhandarkar](https://linkedin.com/in/karthikbhandarkar)
+- **LinkedIn**: [linkedin.com/in/karthik-bhandarkar](https://www.linkedin.com/in/karthik-bhandarkar/)
 - **GitHub**: [github.com/Karthik-bhandarkar](https://github.com/Karthik-bhandarkar)
 - **LeetCode**: [leetcode.com/u/karthik_bhandarkar/](https://leetcode.com/u/karthik_bhandarkar/)
 - **Email**: [karthikbhandarkar2004@gmail.com](mailto:karthikbhandarkar2004@gmail.com)

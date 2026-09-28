@@ -36,7 +36,13 @@ async function main() {
     await db
       .insert(portfolioProfile)
       .values(defaultProfile)
-      .onConflictDoNothing();
+      .onConflictDoUpdate({
+        target: portfolioProfile.id,
+        set: {
+          ...defaultProfile,
+          updatedAt: new Date(),
+        },
+      });
     console.log("✅ [Seed] Profile seeded successfully.");
 
     console.log(`📦 [Seed] Seeding ${initialProjects.length} initial projects...`);
